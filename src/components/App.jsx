@@ -13,6 +13,8 @@ const App = () => {
     return good + neutral + bad;
   }
 
+  let total = getTotal();
+  
   const getPositivePercentage = () => {
     let result = good * 100 / (total ? total : 1);
     return Math.round(parseFloat(result) * 100) / 100;
@@ -39,7 +41,6 @@ const App = () => {
   }
 
   let feedbackOptions = Object.keys({good, neutral, bad});
-  let total = getTotal();
   let positivePercentage = getPositivePercentage();
   return (
     <div className="container">
